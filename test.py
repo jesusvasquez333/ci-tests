@@ -30,5 +30,14 @@ class TestSubs(unittest.TestCase):
         result = maths.subtract(15,7)
         self.assertEqual(result,8)
 
+class TestMultiply(unittest.TestCase):
+    """
+    Test the multiplication function
+    """
+
+    def test_multiply_integers(self):
+        result = matsh.multiply(8,7)
+        self.assertEqual(result,56)
+
 if __name__ == '__main__':
     unittest.main()
