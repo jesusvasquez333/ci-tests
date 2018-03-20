@@ -39,5 +39,14 @@ class TestMultiply(unittest.TestCase):
         result = maths.multiply(8,7)
         self.assertEqual(result,56)
 
+class TestDivision(unittest.TestCase):
+    """
+    Test the division function
+    """
+
+    def test_division_integers(self):
+        result = maths.divide(20,8)
+        self.assertEqual(result,2.5)
+
 if __name__ == '__main__':
     unittest.main()
