@@ -19,7 +19,7 @@ class TestSum(unittest.TestCase):
         Test the sum of floats
         """
         result = maths.sum(15.3,27.8)
-        self.assertEqual(43.1)
+        self.assertEqual(result, 43.1)
 
 if __name__ == '__main__':
     unittest.main()
