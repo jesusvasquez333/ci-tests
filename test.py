@@ -36,7 +36,7 @@ class TestMultiply(unittest.TestCase):
     """
 
     def test_multiply_integers(self):
-        result = matsh.multiply(8,7)
+        result = maths.multiply(8,7)
         self.assertEqual(result,56)
 
 if __name__ == '__main__':
