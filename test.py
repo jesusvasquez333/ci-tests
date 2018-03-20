@@ -27,7 +27,7 @@ class TestSubs(unittest.TestCase):
     """
 
     def test_subtract_integers(self):
-        result = maths.subtract(15,7):
+        result = maths.subtract(15,7)
         self.assertEqual(result,8)
 
 if __name__ == '__main__':
