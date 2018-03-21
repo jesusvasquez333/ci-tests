@@ -7,7 +7,7 @@ python:
   - 3.6
 
 install:
-  - pip install coverage codecov
+  - pip install coverage codecov codacy-coverage
 
 script:
   - coverage run test.py
