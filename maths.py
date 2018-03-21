@@ -11,3 +11,6 @@ def multiply(a,b):
 
 def divide(a,b):
     return float(a)/b
+
+def power(a,b):
+    return a**b
