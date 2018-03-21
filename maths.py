@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-def sum(a,b):
+def addition(a,b):
     return a+b
 
 def subtract(a,b):
