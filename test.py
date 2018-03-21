@@ -5,20 +5,20 @@ import unittest
 
 class TestSum(unittest.TestCase):
     """
-    Test the sum function
+    Test the addition function
     """
     def test_sum_integers(self):
         """
-        Test the sum of integers
+        Test the addition of integers
         """
-        result = maths.sum(3,5)
+        result = maths.addition(3,5)
         self.assertEqual(result, 8)
 
     def test_sum_floats(self):
         """
-        Test the sum of floats
+        Test the addition of floats
         """
-        result = maths.sum(15.3,27.8)
+        result = maths.addition(15.3,27.8)
         self.assertEqual(result, 43.1)
 
 class TestSubs(unittest.TestCase):
