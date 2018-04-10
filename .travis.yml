@@ -14,7 +14,7 @@ install:
   - sudo ./bootstrap.sh --prefix=/usr/local
   - sudo ./b2
   - sudo ./b2 install -d0
-  - cd ..
+  - cd ../..
   # - sudo apt-get install libboost-all-dev
 
 script:
