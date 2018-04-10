@@ -8,14 +8,13 @@ python:
 install:
   - pwd
   - pip install coverage codecov codacy-coverage
-  # - cd packages
-  # - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
-  # - sudo tar xzf boost_1_64_0.tar.gz
-  # - cd boost_1_64_0/
-  # - sudo ./bootstrap.sh --prefix=/usr/local
-  # - sudo ./b2
-  # - sudo ./b2 install -d0
-  # - cd ../..
+  - cd packages
+  - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
+  - sudo tar xzf boost_1_64_0.tar.gz
+  - cd boost_1_64_0/
+  - sudo ./bootstrap.sh
+  - sudo ./b2
+  - cd ../..
   - ls packages/boost_1_64_0
   # - sudo apt-get install libboost-all-dev
 
@@ -32,5 +31,5 @@ after_success:
   - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
   - coverage xml
   - python-codacy-coverage -r coverage.xml
-  - cat /usr/local/boost/version.hpp | grep "BOOST_LIB_VERSION"
+  - cat packages/boost_1_64_0/boost/version.hpp | grep "BOOST_LIB_VERSION"
   - python3 -V
