@@ -27,3 +27,4 @@ after_success:
   - coverage xml
   - python-codacy-coverage -r coverage.xml
   - cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
+  - Python3 -V
