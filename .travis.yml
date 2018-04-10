@@ -8,7 +8,7 @@ python:
 install:
   - pwd
   - pip install coverage codecov codacy-coverage
-  - mkdir packages; cd packages
+  - cd packages
   - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
   - sudo tar xzf boost_1_64_0.tar.gz
   - cd boost_1_64_0/
@@ -21,7 +21,7 @@ install:
 
 cache:
   directories:
-    - packages/boost_1_64_0
+    - packages
 
 script:
   - coverage run test.py
