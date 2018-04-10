@@ -12,7 +12,7 @@ install:
   - sudo tar xzf boost_1_64_0.tar.gz
   - cd boost_1_64_0/
   - sudo ./bootstrap.sh --prefix=/usr/local
-  - ./b2
+  - sudo ./b2
   - sudo ./b2 install -d0
   # - sudo apt-get install libboost-all-dev
 
