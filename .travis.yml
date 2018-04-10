@@ -13,7 +13,7 @@ install:
   - sudo tar xzf boost_1_64_0.tar.gz
   - cd boost_1_64_0/
   - sudo ./bootstrap.sh
-  - sudo ./b2
+  - sudo ./b2 --install
   - cd ../..
   - ls packages/boost_1_64_0
   # - sudo apt-get install libboost-all-dev
@@ -31,5 +31,6 @@ after_success:
   - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
   - coverage xml
   - python-codacy-coverage -r coverage.xml
-  - cat packages/boost_1_64_0/boost/version.hpp | grep "BOOST_LIB_VERSION"
+  - cat /usr/local/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
+  - ls /usr/local/lib/
   - python3 -V
