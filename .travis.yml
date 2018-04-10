@@ -26,5 +26,5 @@ after_success:
   - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
   - coverage xml
   - python-codacy-coverage -r coverage.xml
-  - cat /usr/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
+  - cat /usr/local/boost/version.hpp | grep "BOOST_LIB_VERSION"
   - Python3 -V
