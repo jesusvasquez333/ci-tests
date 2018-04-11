@@ -12,9 +12,9 @@ install:
   - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
   - sudo tar xzf boost_1_64_0.tar.gz
   - cd boost_1_64_0/
-  - ./bootstrap.sh --prefix=/usr/local --with-python=python3.6
-  - ./b2
-  - sudo ./b2 --install
+  - sudo ./bootstrap.sh --prefix=/usr/local --with-python=python3.6
+  - sudo ./b2
+  - sudo ./b2 install
   - cd ../..
   - ls packages/boost_1_64_0
   # - sudo apt-get install libboost-all-dev
