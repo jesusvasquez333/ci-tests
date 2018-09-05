@@ -7,7 +7,7 @@ python:
 
 install:
   - pip install .
-  - pip install codecov pytest-cov
+  - pip install coverage codecov codacy-coverage pytest-cov
 
 script:
   - pytest --cov=./
