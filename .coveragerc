@@ -1,6 +1,6 @@
 [run]
 branch = True
-include = src/mathpack/*
+source = maths
 
 [report]
 exclude_lines =
