@@ -6,22 +6,7 @@ python:
   - 3.6
 
 install:
-  - pwd
   - pip install coverage codecov codacy-coverage
-  - cd packages
-  - sudo wget -O boost_1_64_0.tar.gz http://sourceforge.net/projects/boost/files/boost/1.64.0/boost_1_64_0.tar.gz/download
-  - sudo tar xzf boost_1_64_0.tar.gz
-  - cd boost_1_64_0/
-  - sudo ./bootstrap.sh --prefix=/usr/local --with-python=python3.6
-  - sudo ./b2
-  - sudo ./b2 install -d0
-  - cd ../..
-  - ls packages/boost_1_64_0
-  # - sudo apt-get install libboost-all-dev
-
-cache:
-  directories:
-    - packages
 
 script:
   # - coverage run test.py
@@ -33,8 +18,3 @@ after_success:
   - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
   - coverage xml
   - python-codacy-coverage -r coverage.xml
-  - ls /usr/local
-  - ls /usr/local/include
-  - cat /usr/local/include/boost/version.hpp | grep "BOOST_LIB_VERSION"
-  - ls /usr/local/lib/
-  - python3 -V
