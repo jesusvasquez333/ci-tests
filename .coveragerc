@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = maths.py
+source = src/mathpack/*
 
 [report]
 exclude_lines =
