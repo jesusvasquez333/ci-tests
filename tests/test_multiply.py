@@ -6,4 +6,5 @@ def test_multiply_integers():
     """
     Test the multiplication function
     """
-    assert(m.multiply(8,7) == 56)
+    if m.multiply(8,7) != 56:
+        raise AssertionError()

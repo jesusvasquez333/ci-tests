@@ -6,4 +6,5 @@ def test_subtract_integers():
     """
     Test the substraction function
     """
-    assert(m.subtract(15,7) == 8)
+    if m.subtract(15,7) != 8:
+        raise AssertionError()
