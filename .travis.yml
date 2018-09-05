@@ -8,6 +8,9 @@ python:
 install:
   - pip install coverage codecov codacy-coverage
 
+before_script:
+  - export PYTHONPATH=./src:$PYTHONPATH
+  
 script:
   # - coverage run test.py
   - pytest
