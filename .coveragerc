@@ -1,6 +1,6 @@
 [run]
 branch = True
-source = src/mathpack/*
+source = src/mathpack/
 
 [report]
 exclude_lines =
