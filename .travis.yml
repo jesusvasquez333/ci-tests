@@ -5,31 +5,27 @@ language: python
 python:
   - 3.6
 
+jobs:
+  include:
+    - stage: unit-tests
+    - stage: deploy
+      if: branch = master
+      script: skip
+      deploy:
+        provider: script
+        script:
+          - echo "Building container"
+
 install:
   - pip install .
   - pip install coverage codecov codacy-coverage pytest pytest-cov
 
-jobs:
-  include:
-    - stage: unit-tests
-      script:
-        - pytest --cov
-        - codecov
-        - coverage report -m
-        - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
-        - coverage xml
-        - python-codacy-coverage -r coverage.xml
-    - stage: deploy
-      if: branch = master
-      script:
-        - echo "Building container"
+script:
+  - pytest --cov
 
-# script:
-#   - pytest --cov
-#
-# after_success:
-#   - codecov
-#   - coverage report -m
-#   - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
-#   - coverage xml
-#   - python-codacy-coverage -r coverage.xml
+after_success:
+  - codecov
+  - coverage report -m
+  - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
+  - coverage xml
+  - python-codacy-coverage -r coverage.xml
