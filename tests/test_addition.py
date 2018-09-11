@@ -6,7 +6,7 @@ def test_sum_integers():
     """
     Test the addition of integers
     """
-    if m.addition(3,5) != 9:
+    if m.addition(3,5) != 8:
         raise AssertionError()
 
 def test_sum_floats():
