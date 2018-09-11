@@ -13,8 +13,9 @@ jobs:
       script: skip
       deploy:
         provider: script
-        script:
-          - echo "Building container"
+        script: deploy.sh
+        on:
+          tags: true
 
 install:
   - pip install .
