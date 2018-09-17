@@ -14,6 +14,7 @@ jobs:
 
       name: "Import module"
       script:
+          - export PYTHONPATH=./src:$PYTHONPATH
           - python test/import.py
 
     - stage: deploy
