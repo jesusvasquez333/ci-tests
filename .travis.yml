@@ -12,6 +12,10 @@ jobs:
       script:
           - pytest --cov
 
+      name: "Import module"
+      script:
+          - python test/import.py
+
     - stage: deploy
       if: tag IS present
       install: skip
