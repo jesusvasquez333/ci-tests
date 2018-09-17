@@ -9,14 +9,15 @@ jobs:
   include:
     - stage: unit-tests
     - stage: deploy
-      if: branch = master
-      install: skip
-      script: skip
-      after_success: skip
+      # if: (branch = master) AND tag IS present
+      # install: skip
+      # script: skip
+      # after_success: skip
       deploy:
         provider: script
         script: deploy.sh
         on:
+          branch: master
           tags: true
 
 install:
