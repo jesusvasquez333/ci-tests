@@ -7,12 +7,12 @@ python:
 
 jobs:
   include:
-    - stage: "Test"
-      name: "Unit tests"
+    - stage: test
+      # name: "Unit tests"
       script:
           - pytest --cov
 
-      name: "Import module"
+      # name: "Import module"
       script:
           - python tests/import.py
 
