@@ -11,13 +11,13 @@ jobs:
       # name: "Unit tests"
     - script:
         - pytest --cov
-        name: "unit tests with coverage"
+      name: "unit tests with coverage"
 
       # name: "Import module"
     - script:
         - python tests/import.py
-        name: "Import module"
-        after_sucess: skip
+      name: "Import module"
+      after_sucess: skip
 
     - stage: deploy
       if: tag IS present
