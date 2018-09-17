@@ -23,7 +23,7 @@ jobs:
     - stage: deploy
       if: tag IS present
       script:
-          - echo "Building docer container..."
+          - echo "Building docker container..."
 
 # install:
 #   - pip install .
