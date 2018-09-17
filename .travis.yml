@@ -7,11 +7,12 @@ python:
 
 jobs:
   include:
-    - stage: "Test"
-      name: "Unit tests"
+    - stage: install
       install:
           - pip install .
           - pip install coverage codecov codacy-coverage pytest pytest-cov
+    - stage: "Test"
+      name: "Unit tests"
       script:
           - pytest --cov
       after_success:
