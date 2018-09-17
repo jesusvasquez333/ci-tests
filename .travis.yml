@@ -11,11 +11,10 @@ jobs:
     - stage: deploy
       if: tag IS present
       install: skip
-      script: bash deploy.sh
-      after_success: skip
-      # deploy:
-      #   provider: script
-      #   script: deploy.sh
+      script: skip
+      deploy:
+        provider: script
+        script: deploy.sh
         # on:
         #   branch: master
         #   tags: true
