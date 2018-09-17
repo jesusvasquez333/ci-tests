@@ -7,22 +7,25 @@ python:
 
 jobs:
   include:
-    - stage: install
-      script:
-          - pip install .
-          - pip install coverage codecov codacy-coverage pytest pytest-cov
     - stage: "Test"
       name: "Unit tests"
       script:
           - pytest --cov
-      after_success:
-          - codecov
-          - coverage report -m
-          - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
-          - coverage xml
-          - python-codacy-coverage -r coverage.xml
 
     - stage: deploy
       if: tag IS present
+      install: skip
+      after_success: skip
       script:
           - echo "Building docker container..."
+
+install:
+    - pip install .
+    - pip install coverage codecov codacy-coverage pytest pytest-cov
+
+after_success:
+    - codecov
+    - coverage report -m
+    - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
+    - coverage xml
+    - python-codacy-coverage -r coverage.xml
