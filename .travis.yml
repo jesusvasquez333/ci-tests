@@ -8,14 +8,14 @@ python:
 jobs:
   include:
     - stage: tests
-      - name: "Unit Tests"
-        script:
-          - pytest --cov
+      name: "Unit Tests"
+      script:
+        - pytest --cov
 
-      - name: "Import module"
-        script:
-          - python tests/import.py
-        after_sucess: skip
+      name: "Import module"
+      script:
+        - python tests/import.py
+      after_sucess: skip
 
     - stage: deploy
       if: tag IS present
