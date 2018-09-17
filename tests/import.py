@@ -1,3 +1,3 @@
 #!/usr/bin/env python
 
-import mathpack.maths
+import mathpack2.maths
