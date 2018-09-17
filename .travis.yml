@@ -15,7 +15,7 @@ jobs:
     - script:               #  - Second test stage job: Import module without coverage report
       - python tests/import.py
       name: "Import module"
-      after_sucess: skip
+      after_success: skip
 
     - stage: Deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
