@@ -11,6 +11,7 @@ jobs:
     - stage: deploy
       if: tag IS present
       install: skip
+      script: skip
       after_success: skip
       deploy:
         provider: script
