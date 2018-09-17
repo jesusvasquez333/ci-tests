@@ -7,17 +7,17 @@ python:
 
 jobs:
   include:
-    - stage: tests
-      name: "Unit Tests"
+    - stage: Tests          # Test stage
+      name: "Unit Tests"    #  - First test stage job:  Unit test with coverage report
       script:
         - pytest --cov
 
+    - script:               #  - Second test stage job: Import module without coverage report
+      - python tests/import.py
       name: "Import module"
-      script:
-        - python tests/import.py
       after_sucess: skip
 
-    - stage: deploy
+    - stage: Deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
       install: skip
       after_success: skip
