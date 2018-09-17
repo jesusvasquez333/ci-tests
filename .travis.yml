@@ -7,14 +7,14 @@ python:
 
 jobs:
   include:
-    - stage: test
+    # - stage: test
       # name: "Unit tests"
-      script:
-          - pytest --cov
+    - script:
+        - pytest --cov
 
       # name: "Import module"
-      script:
-          - python tests/import.py
+    - script:
+        - python tests/import.py
 
     - stage: deploy
       if: tag IS present
