@@ -24,6 +24,15 @@ jobs:
       script:
           - echo "Building docker container..."
 
+    - stage: "Test deploy"  # Test the deployed container
+      if: tag IS present
+      install:
+        - echo "Installing..."
+      scrip:
+        - echo "Testing docker container..."
+      after_success:
+        - echo "Docker container test OK"
+
 install:
     - pip install .
     - pip install coverage codecov codacy-coverage pytest pytest-cov
