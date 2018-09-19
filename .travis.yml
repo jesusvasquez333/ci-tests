@@ -8,29 +8,12 @@ python:
 
 jobs:
   include:
-    - stage: Tests          # Test stage
-      name: "Unit Tests"    #  - First test stage job:  Unit test with coverage report
-
-    - script:               #  - Second test stage job: Import module without coverage report
-      - python tests/import.py
-      name: "Import module"
-      after_success: skip
-
     - stage: Deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
       install: skip
       after_success: skip
       script:
           - echo "Building docker container..."
-
-    - stage: "Test deploy"  # Test the deployed container
-      if: tag IS present
-      install:
-        - echo "Installing..."
-      script:
-        - echo "Testing docker container..."
-      after_success:
-        - echo "Docker container test OK"
 
 install:
     - pip install .
