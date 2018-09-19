@@ -8,6 +8,7 @@ python:
 
 jobs:
   include:
+    - stage: Test
     - stage: Deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
       install: skip
