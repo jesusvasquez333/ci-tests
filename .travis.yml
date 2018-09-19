@@ -4,16 +4,16 @@ language: python
 
 python:
   - 3.6
+  - 2.7
 
 jobs:
   include:
-    - stage: test
     - stage: deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
       install: skip
       after_success: skip
       script: skip
-      deploy:
+      deploy: &script
           provider: script
           script:
               - echo "Building docker container..."
