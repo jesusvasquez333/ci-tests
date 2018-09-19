@@ -5,12 +5,9 @@ language: python
 python:
   - 3.6
 
-env:
-  global:
-    - FOO=foo
-
 jobs:
   include:
+    - stage: test
     - stage: deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
       install: skip
