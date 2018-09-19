@@ -5,9 +5,13 @@ language: python
 python:
   - 3.6
 
+stages:
+  - test
+  - deploy
+
 jobs:
   include:
-    - stage: Deploy         # Deploy stage (only for tagged versions)
+    - stage: deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
       install: skip
       after_success: skip
