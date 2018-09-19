@@ -9,6 +9,10 @@ python:
 jobs:
   include:
     - stage: Test
+      name: "Unit Tests"
+      script:
+        - pytest --cov
+
     - stage: Deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
       install: skip
@@ -19,9 +23,6 @@ jobs:
 install:
     - pip install .
     - pip install coverage codecov codacy-coverage pytest pytest-cov
-
-script:
-    - pytest --cov
 
 after_success:
     - codecov
