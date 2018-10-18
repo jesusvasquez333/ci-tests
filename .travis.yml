@@ -8,6 +8,12 @@ python:
 jobs:
   include:
     - stage: test
+    - stage: test_conda
+      install:
+          - echo "Installing using conda"
+      script:
+          - echo "Runing conda test"
+      after_sucess: skip
     - stage: deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
       install: skip
