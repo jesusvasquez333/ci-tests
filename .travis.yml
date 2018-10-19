@@ -34,7 +34,7 @@ jobs:
       # after_success: skip
       script:
           - echo "Building docker container..."
-    - script:
+      script:
           - echo "Builing conda package"
 
 # install:
