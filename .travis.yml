@@ -18,6 +18,10 @@ jobs:
           - pip install coverage codecov codacy-coverage pytest pytest-cov
       script:
           - pytest --cov
+      name: "Test from source"
+    - script:
+        - echo "Running conda tests..."
+      name: "Test from conda"
 
       after_success:
           - codecov
