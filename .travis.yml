@@ -28,7 +28,7 @@ jobs:
     #       - echo "Runing conda test"
       # after_sucess: skip
     - stage: deploy         # Deploy stage (only for tagged versions)
-      if: tag IS present
+      #if: tag IS present
       # install: skip
       # after_success: skip
       script:
