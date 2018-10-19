@@ -13,6 +13,7 @@ stages:
 jobs:
   include:
     - stage: test
+      name: "Test from source"
       install:
           - pip install .
           - pip install coverage codecov codacy-coverage pytest pytest-cov
@@ -24,13 +25,13 @@ jobs:
           - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
           - coverage xml
           - python-codacy-coverage -r coverage.xml
-      name: "Test from source"
-    - script:
-        - echo "Running conda tests..."
+    - name: "Test from conda"
       install:
           - echo "Installing conda tools..."
           - echo "Installing using conda..."
-      name: "Test from conda"
+      script:
+        - echo "Running conda tests..."
+
 
 
     # - stage: test_conda
