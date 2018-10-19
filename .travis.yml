@@ -41,16 +41,16 @@ jobs:
     #       - echo "Runing conda test"
       # after_sucess: skip
     - stage: deploy         # Deploy stage (only for tagged versions)
+      name: "Deploy Docker"
       #if: tag IS present
       # install: skip
       # after_success: skip
       script:
           - echo "Building docker container..."
-      name: "Deploy Docker"
 
-    - script:
+    - name: "Deploy Conda"
+      script:
           - echo "Builing conda package"
-      name: "Deploy Conda"
 
 # install:
 #     - pip install .
