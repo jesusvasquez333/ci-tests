@@ -5,6 +5,11 @@ language: python
 python:
   - 3.6
 
+stage:
+    - test
+    - name: deploy
+      if: tag IS present
+
 jobs:
   include:
     - stage: test
