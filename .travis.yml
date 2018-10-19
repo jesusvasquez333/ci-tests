@@ -8,31 +8,45 @@ python:
 jobs:
   include:
     - stage: test
+      install:
+          - pip install .
+          - pip install coverage codecov codacy-coverage pytest pytest-cov
+
+      script:
+          - pytest --cov
+
+      after_success:
+          - codecov
+          - coverage report -m
+          - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
+          - coverage xml
+          - python-codacy-coverage -r coverage.xml
+
     - stage: test_conda
       install:
           - echo "Installing using conda"
       script:
           - echo "Runing conda test"
-      after_sucess: skip
+      # after_sucess: skip
     - stage: deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
-      install: skip
-      after_success: skip
+      # install: skip
+      # after_success: skip
       script:
           - echo "Building docker container..."
     - script:
-          - echo "Builing conda package" 
+          - echo "Builing conda package"
 
-install:
-    - pip install .
-    - pip install coverage codecov codacy-coverage pytest pytest-cov
-
-script:
-    - pytest --cov
-
-after_success:
-    - codecov
-    - coverage report -m
-    - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
-    - coverage xml
-    - python-codacy-coverage -r coverage.xml
+# install:
+#     - pip install .
+#     - pip install coverage codecov codacy-coverage pytest pytest-cov
+#
+# script:
+#     - pytest --cov
+#
+# after_success:
+#     - codecov
+#     - coverage report -m
+#     - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
+#     - coverage xml
+#     - python-codacy-coverage -r coverage.xml
