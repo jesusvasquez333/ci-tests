@@ -31,9 +31,9 @@ jobs:
       #if: tag IS present
       # install: skip
       # after_success: skip
-      name: "Deploy Docker"
       script:
           - echo "Building docker container..."
+      name: "Deploy Docker"
 
     - script:
           - echo "Builing conda package"
