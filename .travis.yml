@@ -18,17 +18,20 @@ jobs:
           - pip install coverage codecov codacy-coverage pytest pytest-cov
       script:
           - pytest --cov
-      name: "Test from source"
-    - script:
-        - echo "Running conda tests..."
-      name: "Test from conda"
-
       after_success:
           - codecov
           - coverage report -m
           - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
           - coverage xml
           - python-codacy-coverage -r coverage.xml
+      name: "Test from source"
+    - script:
+        - echo "Running conda tests..."
+      install:
+          - echo "Installing conda tools..."
+          - echo "Installing using conda..."
+      name: "Test from conda"
+
 
     # - stage: test_conda
     #   install:
