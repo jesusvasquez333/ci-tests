@@ -11,7 +11,6 @@ jobs:
       install:
           - pip install .
           - pip install coverage codecov codacy-coverage pytest pytest-cov
-
       script:
           - pytest --cov
 
@@ -22,11 +21,11 @@ jobs:
           - coverage xml
           - python-codacy-coverage -r coverage.xml
 
-    - stage: test_conda
-      install:
-          - echo "Installing using conda"
-      script:
-          - echo "Runing conda test"
+    # - stage: test_conda
+    #   install:
+    #       - echo "Installing using conda"
+    #   script:
+    #       - echo "Runing conda test"
       # after_sucess: skip
     - stage: deploy         # Deploy stage (only for tagged versions)
       if: tag IS present
@@ -34,7 +33,8 @@ jobs:
       # after_success: skip
       script:
           - echo "Building docker container..."
-      script:
+
+    - script:
           - echo "Builing conda package"
 
 # install:
