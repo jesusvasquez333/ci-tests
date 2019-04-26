@@ -65,3 +65,7 @@ jobs:
 #     - export CODACY_PROJECT_TOKEN=f5e3e796439b4c5c9df4c5848b69cfd9
 #     - coverage xml
 #     - python-codacy-coverage -r coverage.xml
+
+notifications:
+  slack:
+    secure: jRPQqLRMkYkRScJ5G+gXzlfq9BddNyh85aVNH2C+5CEJYv5eKXgfhfTTP8Oe7UMCJZe8XqEOpWRc69hnY/MCftpUy63BmQyF7WD1+K3x888ftNxlljwHtg/TW8Bi1RcU3akanD7NOrY3BVpWrYkyBtsccJnmKy76UZ1JpCCu8RQD3OV/6OSeB1lm70O7gnflvQERKEpFBchwGZzICiErWZBrQnXkHXjuMiiHkt+UKcvbgyH7Ubs7s+vHSxN3fFeMf0mSXWI31B3EljcLYxxH6DUdpkU80YqmKmsBQySTkcqLF7CViX5pKeG7alfOuV1RT0wy7Hfb2ZSuQp2zUcveOijcLsG2AvM6L9D9hWvsBsLi5BpHE7d3Q2lkgiAZA5cdjQ6pC6uWH4x/yJ3RwaJzjOgVyGmQr5GQx6TfEWcbmf++N9gU/C07o0LZfqZde2yyJelkDsbiOpLG5lk+JbZXqA7Kh8Zh9X7pD7vcDlEYguBua8MTaFj5S/qgvJb3FSnj31t5EG+DtPbXXWZV2+5rqOFSI3pCg9JLhevJhogFc0/uIJ0g/aHlbAokhqxQpwtyQjAoCkW3A9j7Ka+QQOD7HghJ7gNbRLMjrxw8VHl4fOYA8DKMTwufCFtl9cpKXRYLvFuzNCOKsTvvRzG3pUYMTNNGZb138q3Qqra7hbd41V8=
