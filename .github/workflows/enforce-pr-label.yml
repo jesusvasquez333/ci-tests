@@ -2,9 +2,8 @@
 
 name: EnforcePRLabel
 on:
-  label:
   pull_request:
-    types: [opened]
+    types: [opened, labeled, unlabeled]
 
 jobs:
   enforce-pr-label:
