@@ -12,4 +12,5 @@ jobs:
     - name: Enforce PR label
       uses: yogevbd/enforce-label-action@1.0.1
       env:
+        GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
         VALID_LABELS: "bug,enhancement,feature"
