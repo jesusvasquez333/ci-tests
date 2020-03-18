@@ -1,4 +1,5 @@
 # This workflow will enforce PR to have at least one of the mandatory labels
+
 name: EnforcePRLabel
 on: [pull_request]
 
