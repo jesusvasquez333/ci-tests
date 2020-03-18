@@ -14,4 +14,4 @@ jobs:
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
       env:
-      - VALID_LABELS: "bug,enhancement,feature"
+        VALID_LABELS: "bug,enhancement,feature"
