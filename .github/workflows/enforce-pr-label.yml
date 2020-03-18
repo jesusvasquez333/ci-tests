@@ -2,7 +2,7 @@
 
 name: EnforcePRLabel
 on:
-  label
+  label:
   pull_request:
     types: [opened]
 
