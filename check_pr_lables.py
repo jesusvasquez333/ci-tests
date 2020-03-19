@@ -11,7 +11,7 @@ ghRepo=f"https://github.com/{repo_slug}"
 print(f"repository: {ghRepo}")
 
 gh = Github()
-remRepo = gh.get_repo(ghRepo)
+remRepo = gh.get_repo(repo_slug)
 
 print(f"PR#{pr_number}")
 req = remRepo.get_pull(pr_number)
