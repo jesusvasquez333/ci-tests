@@ -5,7 +5,7 @@ import git
 from github import Github
 
 repo_slug=os.environ.get('TRAVIS_REPO_SLUG')
-pr_number=os.environ.get('TRAVIS_PULL_REQUEST')
+pr_number=int(os.environ.get('TRAVIS_PULL_REQUEST'))
 
 ghRepo=f"https://github.com/{repo_slug}"
 print(f"repository: {ghRepo}")
