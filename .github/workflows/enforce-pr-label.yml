@@ -3,7 +3,7 @@
 name: EnforcePRLabel
 on:
   pull_request:
-    types: [synchronize]
+    types: [opened, labeled, unlabeled]
 
 jobs:
   enforce-pr-label:
