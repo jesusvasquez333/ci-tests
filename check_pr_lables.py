@@ -17,4 +17,10 @@ print(f"PR#{pr_number}")
 req = remRepo.get_pull(pr_number)
 labels = req.get_labels()
 
-print(labels)
+num_labales=len(labels)
+print(f"Number of labels: {num_labales}")
+
+if num_labales:
+	for label in labels:
+		print(label.name)
+
