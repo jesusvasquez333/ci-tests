@@ -6,12 +6,19 @@ python:
   - 3.6
 
 stages:
+    - name: check_pr_labels
+      if: type = pull_request
     - test
     - name: deploy
       if: tag IS present
 
 jobs:
   include:
+    - stage: check_pr_labels
+      before_script:
+        - pip3 install GitPython PyGithub
+      script:
+        - python3 check_pr_lables.py
     - stage: test
       name: "Test from source"
       install:
