@@ -3,7 +3,7 @@
 # for review when someone opens a pull request.
 *                       @swh76 @eyyoung24
 
- # @jesusvasquez333 and @slacrherbst owns the code related
+# @jesusvasquez333 and @slacrherbst owns the code related
 # to the core, dockers, startup scripts, and github and travis
 # automation scrips. Only them will be requested for review.
 /src/                   @jesusvasquez333 @slacrherbst
